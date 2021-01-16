@@ -5,7 +5,7 @@ Dataset by: Erdogdu Sakar, B., Isenkul, M., Sakar, C.O., Sertbas, A., Gurgen, F.
 'Collection and Analysis of a Parkinson Speech Dataset with Multiple Types of Sound Recordings',
 IEEE Journal of Biomedical and Health Informatics, vol. 17(4), pp. 828-834, 2013.
 
-Author: Jagath, Darshit
+Author: Jagath
 
 """
 from sklearn.model_selection import LeaveOneOut
@@ -19,7 +19,7 @@ import pickle as pkl
 from sklearn.metrics import confusion_matrix
 
 #change name to wherever dataset is in your system.
-data_location = r'C:\Users\jagat\Downloads\\'
+data_location = r'C:\Desktop\docs\7th sem\ml\MyParkinson\\'
 
 #to seperate the data of each subject
 def split_data(data,n,split_size,column = None):
@@ -138,4 +138,5 @@ print('predicted classes of test data: ')
 print(clf1.predict(X_test))
 
 #save model in pickle file
-pkl.dump(clf1, open(r'summ_test_data.csv', 'wb'))
+pkl.dump(clf1, open(data_location+'summ_model.sav', 'wb'))
+pkl.dump(clf, open(data_location+'no_summ_model.sav', 'wb'))
